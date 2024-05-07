@@ -1,16 +1,36 @@
 {% extends "base.html" %}
 {% block title %}Funcionários{% endblock %}
 {% block content %}
-    <form action="{{ url_for('funcionario.formFuncionario') }}" method="POST">
-        <h1>Funcionários</h1>
-        <button type="submit" name="formNovo">Novo Funcionário</button>
-    </form>
-        <table class="table">
-  <thead class="table-light">
-    ...
-  </thead>
-  <tbody>
-    ...
-  </tbody>
+
+<form action="{{ url_for('funcionario.formFuncionario') }}" method="POST">
+    <h1>Funcionários</h1>
+    <button class="btn btn-danger p-1" type="submit" name="formNovo">Novo Funcionário</button>
+</form>
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Grupo</th>
+            <th scope="col">Senha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th scope="row">...</th>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td><i class="fas fa-edit"></i></td>
+        <td><i class="fas fa-trash"></i></td>
+        </tr>
+    </tbody>
 </table>
 {% endblock %}
+
