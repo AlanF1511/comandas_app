@@ -1,16 +1,44 @@
 {% extends "base.html" %}
 {% block title %}Login{% endblock %}
 {% block menu %}
+{% block headerMenu %} {% endblock %}
+{% block footerMenu %} {% endblock %}
+
+{% block style %}
+    <style>
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 80vh;}
+
+        .center-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 20vh;
+                }
+
+    </style>
+{% endblock %}
+
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><h2>Ainda vou arrumar e deixar lindo Tio Lu</h2></a>
+    <a class="navbar-brand" href="#"><h2>Naquele nipe</h2></a>
 </nav>
 {% endblock %}
 
 {% block content %}
-<div class="d-flex align-items-center h-100 py-4">
-    <main class="w-100 m-auto form-container">
+<section class="center-container">
+    <main class="form-signin">
         <form action="{{ url_for('login.validaLogin') }}" method="post">
-            <h1 class="h3 mb-3 fw-normal">Seja Bem-Viado</h1>
+            <div class="d-flex">
+                <img class="center-img mb-4" src=../../static/mewing.gif alt="">
+            </div>
+            <h1 class="h3 mb-3 fw-normal">Seja Bem-Viado!</h1>
             <div class="form-floating">
                 <input class="form-control" id="cpf" placeholder="Digite seu CPF" name="usuario" type="text" value="abc">
                 <label for="cpf">CPF</label>
@@ -23,8 +51,8 @@
                 <input class="form-check-input" type="checkbox" id="check">
                 <label for="check" class="form-check-label">Lembrar senha?</label>
             </div>
-                <button class="btn-primary w-100 py-2" value="Login">Entrar</button>
+                <button type="submit" class="w-100 btn btn-lg btn-primary" value="Login">Entrar</button>
         </form>
-</div>
     </main>
+</section>
 {% endblock %}
